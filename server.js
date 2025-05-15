@@ -5,6 +5,7 @@ import MongoStore from 'connect-mongo';
 import session from 'express-session';
 
 import connection from './database/dbConnect.js';
+import { errorHandler } from './config/middleware/errHandler.js';
 
 dotenv.config();
 
@@ -48,6 +49,8 @@ app.use(session({
  * -------------- ROUTES ----------------
  */
 
+// app.use(routes); still needs to bem configured and imported
+// app.use(errorHandler);
 
 
 
