@@ -3,9 +3,11 @@ import express from 'express';
 import mongoose from 'mongoose';
 import MongoStore from 'connect-mongo';
 import session from 'express-session';
+import "./config/passport";
 
 import connection from './database/dbConnect.js';
 import { errorHandler } from './config/middleware/errHandler.js';
+import passport from 'passport';
 
 dotenv.config();
 
@@ -41,7 +43,8 @@ app.use(session({
 /**
  * -------------- PASSPORT AUTHENTICATION ----------------
  */
-
+app.use(passport.initialize());
+app.use(passport.session());
 
 
 
