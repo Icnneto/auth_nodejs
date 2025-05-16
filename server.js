@@ -3,7 +3,8 @@ import express from 'express';
 import mongoose from 'mongoose';
 import MongoStore from 'connect-mongo';
 import session from 'express-session';
-import "./config/passport";
+import router from './routes/routes.js';
+import "./config/passport/passport.js";
 
 import connection from './database/dbConnect.js';
 import { errorHandler } from './config/middleware/errHandler.js';
@@ -52,8 +53,8 @@ app.use(passport.session());
  * -------------- ROUTES ----------------
  */
 
-// app.use(routes); still needs to be configured and imported
-// app.use(errorHandler);
+app.use(router);
+app.use(errorHandler);
 
 
 
