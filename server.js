@@ -49,7 +49,7 @@ app.use(session({
  * -------------- ROUTES ----------------
  */
 
-// app.use(routes); still needs to bem configured and imported
+// app.use(routes); still needs to be configured and imported
 // app.use(errorHandler);
 
 
