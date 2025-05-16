@@ -15,7 +15,11 @@ export async function registerUser (req, res, next) {
     });
 
     try {
-        const userCreated = await newUser.save();
+        const userCreated = await User.create({ 
+            username: newUser.username,
+            hash: newUser.hash,
+            salt: newUser.salt
+         });
         console.log(userCreated);
         
         res.redirect('/login');
