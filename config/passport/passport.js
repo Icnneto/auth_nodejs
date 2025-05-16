@@ -2,6 +2,7 @@ import passport from "passport";
 import { Strategy as LocalStrategy } from "passport-local";
 import connection from "../../database/dbConnect.js";
 import User from "../../database/usersSchema.js";
+import { validPassword } from "../../lib/passwordUtils.js";
 
 const customFields = {
     usernameField: 'uname',
